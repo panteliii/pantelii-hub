@@ -1,1 +1,1563 @@
-loadstring([[local a="https://lootdest.org/s?VTmJryAZ"local b="https://pastebin.com/raw/BGzRX2Ft"if setclipboard then setclipboard(a)end;local c={RU={LangTitle="Выбор языка / Language",LangSubtitle="Выберите ваш язык",KeyTitle="⚡ PANTELIII HUB | Авторизация ⚡",KeySubtitle="Пройдите LootLabs для получения ключа",KeyInputPlaceholder="Вставьте ключ сюда...",KeyCopyBtn="Получить ключ (LootLabs)",KeyCopiedText="Ссылка скопирована!",KeyVerifyBtn="Войти",KeyVerifyingText="Проверка...",KeySuccessText="Успешно!",KeyErrorText="Неверный ключ!",KeyUnloadBtn="Полностью выгрузить софт",KeySuccessTitle="Успешный вход!",KeySuccessDesc="Добро пожаловать в Panteliii Hub.",TabMain="Главная",TabAim="Аимбот",TabPlayer="Игрок",TabVehicle="Машина",TabVisuals="Визуалы",Creator="👑 Создатель",CopyKeyBtn="🔗 СКОПИРОВАТЬ ССЫЛКУ НА КЛЮЧ",UnloadBtn="❌ ПОЛНОСТЬЮ ОТКЛЮЧИТЬ СОФТ",KeybindLabel="Быстрая кнопка (Аим / FOV)",CopiedNotify="Ссылка на получение ключа скопирована!",AimEnable="Включить Аимбот",AimPart="Зона наводки",AimParts={"Торс","Голова"},Torso="Торс",Head="Голова",WallCheck="Проверка стен (WallCheck)",AutoPred="Авто-упреждение (Расстояние/Динамика)",AimSmooth="Жесткость аима",FovVisible="Показывать круг FOV",FovRadius="Радиус FOV",FovColor="Цвет FOV",SpeedEnable="Включить Спидхак",SpeedVal="Скорость",Noclip="Проход сквозь стены (Noclip)",AntiAfk="Включить Anti-AFK (Анти-Кик)",VehEnable="Скорость Авто (Velocity)",VehMult="Множитель Скорости",EspEnable="Включить ESP (Обводка тела)",EspDist="Дистанция ESP",EspColor="Цвет ESP (ВХ)",TeamCheck="Фильтр команд (Team Check)"},EN={LangTitle="Language Selection / Выбор языка",LangSubtitle="Select your preferred language",KeyTitle="⚡ PANTELIII HUB | Authorization ⚡",KeySubtitle="Complete LootLabs to get the access key",KeyInputPlaceholder="Paste your key here...",KeyCopyBtn="Get Key (LootLabs)",KeyCopiedText="Link copied!",KeyVerifyBtn="Log In",KeyVerifyingText="Verifying...",KeySuccessText="Success!",KeyErrorText="Invalid Key!",KeyUnloadBtn="Unload Script Completely",KeySuccessTitle="Success!",KeySuccessDesc="Welcome to Panteliii Hub.",TabMain="Main",TabAim="Aimbot",TabPlayer="Player",TabVehicle="Vehicle",TabVisuals="Visuals",Creator="👑 Creator",CopyKeyBtn="🔗 COPY KEY LINK",UnloadBtn="❌ UNLOAD SCRIPT",KeybindLabel="Quick Toggle Key (Aim / FOV)",CopiedNotify="Key link copied to clipboard!",AimEnable="Enable Aimbot",AimPart="Target Part",AimParts={"Torso","Head"},Torso="Torso",Head="Head",WallCheck="Wall Check",AutoPred="Auto Prediction",AimSmooth="Aim Smoothness",FovVisible="Show FOV Circle",FovRadius="FOV Radius",FovColor="FOV Color",SpeedEnable="Enable Speedhack",SpeedVal="Speed Value",Noclip="Noclip",AntiAfk="Anti-AFK",VehEnable="Vehicle Speed (Velocity)",VehMult="Speed Multiplier",EspEnable="Enable ESP (Chams)",EspDist="ESP Distance",EspColor="ESP Color",TeamCheck="Team Check"}}local d=nil;local e=nil;local f=Instance.new("ScreenGui")local g=Instance.new("Frame")local h=Instance.new("UICorner")local i=Instance.new("TextLabel")local j=Instance.new("TextLabel")local k=Instance.new("TextButton")local l=Instance.new("UICorner")local m=Instance.new("TextButton")local n=Instance.new("UICorner")f.Name="PanteliiiLangSelect"f.Parent=game:GetService("CoreGui")or game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui")g.Name="LangFrame"g.Parent=f;g.BackgroundColor3=Color3.fromRGB(24,24,24)g.Position=UDim2.new(0.5,-150,0.5,-80)g.Size=UDim2.new(0,300,0,160)g.Active=true;g.Draggable=true;h.CornerRadius=UDim.new(0,10)h.Parent=g;i.Parent=g;i.BackgroundTransparency=1;i.Position=UDim2.new(0,0,0,12)i.Size=UDim2.new(1,0,0,25)i.Font=Enum.Font.SourceSansBold;i.Text="⚡ PANTELIII HUB ⚡"i.TextColor3=Color3.fromRGB(255,255,255)i.TextSize=18;j.Parent=g;j.BackgroundTransparency=1;j.Position=UDim2.new(0,0,0,35)j.Size=UDim2.new(1,0,0,20)j.Font=Enum.Font.SourceSans;j.Text="Select Language / Выберите язык"j.TextColor3=Color3.fromRGB(160,160,160)j.TextSize=14;k.Parent=g;k.BackgroundColor3=Color3.fromRGB(40,40,40)k.Position=UDim2.new(0.1,0,0.45,0)k.Size=UDim2.new(0.38,0,0,40)k.Font=Enum.Font.SourceSansBold;k.Text="🇷🇺 Русский"k.TextColor3=Color3.fromRGB(255,255,255)k.TextSize=15;l.CornerRadius=UDim.new(0,6)l.Parent=k;m.Parent=g;m.BackgroundColor3=Color3.fromRGB(40,40,40)m.Position=UDim2.new(0.52,0,0.45,0)m.Size=UDim2.new(0.38,0,0,40)m.Font=Enum.Font.SourceSansBold;m.Text="🇬🇧 English"m.TextColor3=Color3.fromRGB(255,255,255)m.TextSize=15;n.CornerRadius=UDim.new(0,6)n.Parent=m;k.MouseButton1Click:Connect(function()d="RU"e=c.RU;f:Destroy()end)m.MouseButton1Click:Connect(function()d="EN"e=c.EN;f:Destroy()end)repeat task.wait(0.1)until d~=nil;task.wait(0.2)local o=Instance.new("ScreenGui")local p=Instance.new("Frame")local q=Instance.new("UICorner")local r=Instance.new("TextLabel")local s=Instance.new("TextLabel")local t=Instance.new("TextBox")local u=Instance.new("UICorner")local v=Instance.new("TextButton")local w=Instance.new("UICorner")local x=Instance.new("TextButton")local y=Instance.new("UICorner")local z=Instance.new("TextButton")local A=Instance.new("UICorner")o.Name="PanteliiiAuth"o.Parent=game:GetService("CoreGui")or game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui")p.Name="MainFrame"p.Parent=o;p.BackgroundColor3=Color3.fromRGB(24,24,24)p.Position=UDim2.new(0.5,-175,0.5,-130)p.Size=UDim2.new(0,350,0,260)p.Active=true;p.Draggable=true;q.CornerRadius=UDim.new(0,10)q.Parent=p;r.Parent=p;r.BackgroundTransparency=1;r.Position=UDim2.new(0,0,0,10)r.Size=UDim2.new(1,0,0,25)r.Font=Enum.Font.SourceSansBold;r.Text=e.KeyTitle;r.TextColor3=Color3.fromRGB(255,255,255)r.TextSize=17;s.Parent=p;s.BackgroundTransparency=1;s.Position=UDim2.new(0,0,0,32)s.Size=UDim2.new(1,0,0,20)s.Font=Enum.Font.SourceSans;s.Text=e.KeySubtitle;s.TextColor3=Color3.fromRGB(160,160,160)s.TextSize=13;t.Parent=p;t.BackgroundColor3=Color3.fromRGB(35,35,35)t.Position=UDim2.new(0.08,0,0.28,0)t.Size=UDim2.new(0.84,0,0,36)t.Font=Enum.Font.SourceSans;t.PlaceholderText=e.KeyInputPlaceholder;t.Text=""t.TextColor3=Color3.fromRGB(255,255,255)t.TextSize=15;u.CornerRadius=UDim.new(0,6)u.Parent=t;v.Parent=p;v.BackgroundColor3=Color3.fromRGB(45,45,45)v.Position=UDim2.new(0.08,0,0.46,0)v.Size=UDim2.new(0.84,0,0,30)v.Font=Enum.Font.SourceSansBold;v.Text=e.KeyCopyBtn;v.TextColor3=Color3.fromRGB(200,200,200)v.TextSize=14;w.CornerRadius=UDim.new(0,6)w.Parent=v;x.Parent=p;x.BackgroundColor3=Color3.fromRGB(0,140,255)x.Position=UDim2.new(0.08,0,0.61,0)x.Size=UDim2.new(0.84,0,0,32)x.Font=Enum.Font.SourceSansBold;x.Text=e.KeyVerifyBtn;x.TextColor3=Color3.fromRGB(255,255,255)x.TextSize=15;y.CornerRadius=UDim.new(0,6)y.Parent=x;z.Parent=p;z.BackgroundColor3=Color3.fromRGB(180,40,40)z.Position=UDim2.new(0.08,0,0.77,0)z.Size=UDim2.new(0.84,0,0,30)z.Font=Enum.Font.SourceSansBold;z.Text=e.KeyUnloadBtn;z.TextColor3=Color3.fromRGB(255,255,255)z.TextSize=14;A.CornerRadius=UDim.new(0,6)A.Parent=z;v.MouseButton1Click:Connect(function()if setclipboard then setclipboard(a)v.Text=e.KeyCopiedText;task.wait(2)v.Text=e.KeyCopyBtn end end)z.MouseButton1Click:Connect(function()o:Destroy()end)local function B()o:Destroy()local C=loadstring(game:HttpGet('https://sirius.menu/rayfield'))()local D=C:CreateWindow({Name="⚡ PANTELIII HUB ⚡",LoadingTitle="Panteliii Hub Loading...",LoadingSubtitle="by Panteliii",ConfigurationSaving={Enabled=false},Discord={Enabled=false},KeySystem=false})C:Notify({Title=e.KeySuccessTitle,Content=e.KeySuccessDesc,Duration=4})local E=game:GetService("Players")local F=game:GetService("Workspace")local G=game:GetService("RunService")local H=game:GetService("UserInputService")local I=game:GetService("VirtualUser")local J=E.LocalPlayer;local K=F.CurrentCamera;local L=Vector2.new;local M=Vector3.new;local N=math.floor;local O=math.max;local P=math.huge;local Q=table.unpack or unpack;local R=table.clear;local mousemoverel=mousemoverel or Input and Input.MoveMouseRelative or syn_mousemoverel or mousemoveabs and function(S,T)mousemoveabs(S,T)end;getgenv().PanteliiiConfig={SpeedEnabled=false,SpeedValue=16,NoclipEnabled=false,AntiAfkEnabled=false,VehicleSpeedEnabled=false,VehicleSpeedMult=200,AimEnabled=false,SilentAimEnabled=true,FovVisible=false,FovRadius=180,FovColor=Color3.fromRGB(0,200,255),AimPartMode=e.Torso,WallCheck=true,AutoPrediction=true,BulletSpeed=1600,ManualPrediction=0.045,AimSmoothness=0.25,MasterKeycode=Enum.KeyCode.Q,TeamCheck=false,EspEnabled=false,EspMaxDistance=1000,BoxColor=Color3.fromRGB(0,200,255)}local U=RaycastParams.new()U.FilterType=Enum.RaycastFilterType.Exclude;U.IgnoreWater=true;local V=table.create(3)local W=Drawing.new("Circle")W.Thickness=1.5;W.Color=getgenv().PanteliiiConfig.FovColor;W.Filled=false;W.Transparency=1;W.NumSides=36;W.Visible=false;local X={}local Y={}local Z={}local _=nil;local a0=nil;local a1=nil;local function a2(a3,a4)if not a3 then return false end;a4=a4 or a3:FindFirstChildOfClass("Humanoid")return a4 and a4.Health>0 and a4:GetState()~=Enum.HumanoidStateType.Dead end;local function a5(a6)if not a6 then return nil end;if a6.Team~=nil then return a6.Team end;if a6.TeamColor then return a6.TeamColor.Name end;local a7=a6:FindFirstChild("Team")or a6:FindFirstChild("Faction")or a6:FindFirstChild("Role")if a7 then return a7:IsA("ValueBase")and tostring(a7.Value)or a7.Name end;return nil end;local function a8(a6)if not a6 or a6==J then return false end;if not getgenv().PanteliiiConfig.TeamCheck then return true end;local a9=a5(J)local aa=a5(a6)if a9~=nil and aa~=nil then return a9~=aa end;return true end;local function ab(ac,ad)if not getgenv().PanteliiiConfig.WallCheck then return true end;if not ac or not ac.Parent then return false end;local ae=K.CFrame.Position;local af=ac.Position;R(V)V[1]=K;if J.Character then V[2]=J.Character end;if ad then V[3]=ad end;U.FilterDescendantsInstances=V;local ag=F:Raycast(ae,af-ae,U)if not ag then return true end;local ah=ag.Instance;return ah:IsDescendantOf(ad)or ah.CanCollide==false or ah.Transparency>=0.75 or ah:IsA("Seat")or ah:IsA("VehicleSeat")end;local function ai(aj)if not aj or not a2(aj.Char,aj.Hum)then return nil end;local ak=getgenv().PanteliiiConfig.AimPartMode==e.Head or getgenv().PanteliiiConfig.AimPartMode=="Голова"or getgenv().PanteliiiConfig.AimPartMode=="Head"local al=ak and aj.Head or aj.Root;local am=ak and aj.Root or aj.Head;if al and ab(al,aj.Char)then return al end;if am and ab(am,aj.Char)then return am end;return nil end;local function an(ao)local af=ao.Position;local ap=ao.Parent:FindFirstChild("HumanoidRootPart")or ao;local aq=ap.AssemblyLinearVelocity;if aq.X*aq.X+aq.Y*aq.Y+aq.Z*aq.Z>0.01 then local ar=getgenv().PanteliiiConfig;local as=ar.ManualPrediction;if ar.AutoPrediction then local at=(K.CFrame.Position-af).Magnitude;as=at/O(ar.BulletSpeed,100)end;return M(af.X+aq.X*as,af.Y+aq.Y*as+98.1*as^2,af.Z+aq.Z*as)end;return af end;local function au(av)local aj=X[av]if aj then if aj.Highlight then aj.Highlight:Destroy()end;if aj.Gui then aj.Gui:Destroy()end;X[av]=nil end end;local function aw(a6,a3)if a6==J then return end;au(a6)task.spawn(function()local ax=a3:WaitForChild("HumanoidRootPart",3)or a3:WaitForChild("Torso",3)or a3:WaitForChild("UpperTorso",3)local ay=a3:WaitForChild("Head",3)local a4=a3:WaitForChild("Humanoid",3)if not ax or not a4 or not a3.Parent then return end;local az=Instance.new("Highlight")az.Name="P_Highlight"az.Adornee=a3;az.DepthMode=Enum.HighlightDepthMode.AlwaysOnTop;az.FillColor=getgenv().PanteliiiConfig.BoxColor;az.FillTransparency=0.5;az.OutlineColor=getgenv().PanteliiiConfig.BoxColor;az.OutlineTransparency=0;az.Enabled=false;az.Parent=a3;local aA=Instance.new("BillboardGui")aA.Name="P_ESP"aA.Adornee=ax;aA.Size=UDim2.new(0,150,0,30)aA.StudsOffset=M(0,3.5,0)aA.AlwaysOnTop=true;aA.Enabled=false;local aB=Instance.new("TextLabel")aB.Size=UDim2.new(1,0,1,0)aB.BackgroundTransparency=1;aB.TextColor3=getgenv().PanteliiiConfig.BoxColor;aB.TextStrokeTransparency=0;aB.TextSize=11;aB.Font=Enum.Font.SourceSansBold;aB.Parent=aA;aA.Parent=ax;X[a6]={Highlight=az,Gui=aA,Label=aB,Char=a3,Player=a6,Root=ax,Head=ay,Hum=a4,LastText="",LastColor=nil}end)end;local function aC(aD)if aD==J then return end;if Z[aD]then Z[aD]:Disconnect()end;if aD.Character then aw(aD,aD.Character)end;Z[aD]=aD.CharacterAdded:Connect(function(a3)aw(aD,a3)end)end;for aE,aD in ipairs(E:GetPlayers())do aC(aD)end;table.insert(Y,E.PlayerAdded:Connect(aC))table.insert(Y,E.PlayerRemoving:Connect(function(aD)if Z[aD]then Z[aD]:Disconnect()Z[aD]=nil end;au(aD)end))table.insert(Y,J.Idled:Connect(function()if getgenv().PanteliiiConfig.AntiAfkEnabled then I:CaptureController()I:ClickButton2(L(0,0))end end))local function aF()pcall(function()if _ then _:Disconnect()end;for aE,aG in ipairs(Y)do if aG then aG:Disconnect()end end;for aE,aG in pairs(Z)do if aG then aG:Disconnect()end end;Y={}Z={}W.Visible=false;W:Remove()for av,aE in pairs(X)do au(av)end;C:Destroy()end)end;if hookmetamethod and getnamecallmethod then local aH;local aI=newcclosure or function(aJ)return aJ end;aH=hookmetamethod(game,"__namecall",aI(function(self,...)local aK=getnamecallmethod()if getgenv().PanteliiiConfig.AimEnabled and a0 and a1 and(aK=="Raycast"or aK=="FindPartOnRayWithIgnoreList"or aK=="FindPartOnRay")then if a0.Parent and a2(a0.Parent)then local aL={...}local af=a1;if aK=="Raycast"and#aL>=2 then aL[2]=(af-aL[1]).Unit*5000;return aH(self,Q(aL))elseif(aK=="FindPartOnRayWithIgnoreList"or aK=="FindPartOnRay")and#aL>=1 then local ae=aL[1].Origin;aL[1]=Ray.new(ae,(af-ae).Unit*5000)return aH(self,Q(aL))end end end;return aH(self,...)end))end;local aM=D:CreateTab(e.TabMain)local aN=D:CreateTab(e.TabAim)local aO=D:CreateTab(e.TabPlayer)local aP=D:CreateTab(e.TabVehicle)local aQ=D:CreateTab(e.TabVisuals)aM:CreateParagraph({Title=e.Creator,Content="Telegram: @pantelii"})aM:CreateButton({Name=e.CopyKeyBtn,Callback=function()if setclipboard then setclipboard(a)C:Notify({Title="Success",Content=e.CopiedNotify,Duration=3})end end})aM:CreateButton({Name=e.UnloadBtn,Callback=aF})aM:CreateKeybind({Name=e.KeybindLabel,CurrentKeybind="Q",HoldToInteract=false,Flag="MasterKey",Callback=function(aR)getgenv().PanteliiiConfig.MasterKeycode=Enum.KeyCode[aR]end})local aS=aN:CreateToggle({Name=e.AimEnable,CurrentValue=false,Flag="AimToggle",Callback=function(aT)getgenv().PanteliiiConfig.AimEnabled=aT end})aN:CreateDropdown({Name=e.AimPart,Options=e.AimParts,CurrentOption={e.Torso},MultipleOptions=false,Flag="AimPart",Callback=function(aT)getgenv().PanteliiiConfig.AimPartMode=type(aT)=="table"and(aT[1]or e.Torso)or aT end})aN:CreateToggle({Name=e.WallCheck,CurrentValue=true,Flag="WallCheck",Callback=function(aT)getgenv().PanteliiiConfig.WallCheck=aT end})aN:CreateToggle({Name=e.AutoPred,CurrentValue=true,Flag="AutoPred",Callback=function(aT)getgenv().PanteliiiConfig.AutoPrediction=aT end})aN:CreateSlider({Name=e.AimSmooth,Range={0.05,0.5},Increment=0.01,Suffix="x",CurrentValue=0.25,Flag="AimSmooth",Callback=function(aT)getgenv().PanteliiiConfig.AimSmoothness=aT end})local aU=aN:CreateToggle({Name=e.FovVisible,CurrentValue=false,Flag="FovVisible",Callback=function(aT)getgenv().PanteliiiConfig.FovVisible=aT end})aN:CreateSlider({Name=e.FovRadius,Range={30,800},Increment=5,Suffix="px",CurrentValue=180,Flag="FovRadius",Callback=function(aT)getgenv().PanteliiiConfig.FovRadius=aT end})aN:CreateColorPicker({Name=e.FovColor,Color=Color3.fromRGB(0,200,255),Flag="FovColorPicker",Callback=function(aT)getgenv().PanteliiiConfig.FovColor=aT;W.Color=aT end})aO:CreateToggle({Name=e.SpeedEnable,CurrentValue=false,Flag="SpeedEnabled",Callback=function(aT)getgenv().PanteliiiConfig.SpeedEnabled=aT end})aO:CreateSlider({Name=e.SpeedVal,Range={16,150},Increment=1,Suffix="studs/s",CurrentValue=16,Flag="SpeedValue",Callback=function(aT)getgenv().PanteliiiConfig.SpeedValue=aT end})aO:CreateToggle({Name=e.Noclip,CurrentValue=false,Flag="NoclipEnabled",Callback=function(aT)getgenv().PanteliiiConfig.NoclipEnabled=aT end})aO:CreateToggle({Name=e.AntiAfk,CurrentValue=false,Flag="AntiAfkEnabled",Callback=function(aT)getgenv().PanteliiiConfig.AntiAfkEnabled=aT end})aP:CreateToggle({Name=e.VehEnable,CurrentValue=false,Flag="VehicleSpeedEnabled",Callback=function(aT)getgenv().PanteliiiConfig.VehicleSpeedEnabled=aT end})aP:CreateSlider({Name=e.VehMult,Range={20,700},Increment=10,Suffix="studs/s",CurrentValue=200,Flag="VehicleSpeedMult",Callback=function(aT)getgenv().PanteliiiConfig.VehicleSpeedMult=aT end})aQ:CreateToggle({Name=e.EspEnable,CurrentValue=false,Flag="EspEnabled",Callback=function(aT)getgenv().PanteliiiConfig.EspEnabled=aT end})aQ:CreateSlider({Name=e.EspDist,Range={0,4000},Increment=50,Suffix="m",CurrentValue=1000,Flag="EspMaxDistance",Callback=function(aT)getgenv().PanteliiiConfig.EspMaxDistance=aT end})aQ:CreateColorPicker({Name=e.EspColor,Color=Color3.fromRGB(0,200,255),Flag="EspColorPicker",Callback=function(aT)getgenv().PanteliiiConfig.BoxColor=aT end})aQ:CreateToggle({Name=e.TeamCheck,CurrentValue=false,Flag="TeamCheck",Callback=function(aT)getgenv().PanteliiiConfig.TeamCheck=aT end})table.insert(Y,H.InputBegan:Connect(function(aV,aW)if aW then return end;if aV.KeyCode==getgenv().PanteliiiConfig.MasterKeycode and aV.KeyCode~=Enum.KeyCode.Unknown then local aX=not getgenv().PanteliiiConfig.AimEnabled;getgenv().PanteliiiConfig.AimEnabled=aX;getgenv().PanteliiiConfig.FovVisible=aX;if aS and aS.Set then aS:Set(aX)end;if aU and aU.Set then aU:Set(aX)end end end))_=G.RenderStepped:Connect(function()local ar=getgenv().PanteliiiConfig;local aY=J.Character;local aZ=aY and aY:FindFirstChild("HumanoidRootPart")local a_=K.ViewportSize;local b0=L(a_.X*0.5,a_.Y*0.5)if ar.NoclipEnabled and aY then for aE,ac in ipairs(aY:GetChildren())do if ac:IsA("BasePart")then ac.CanCollide=false end end end;if ar.SpeedEnabled and aY and aZ then local b1=aY:FindFirstChildOfClass("Humanoid")if b1 and b1.MoveDirection.Magnitude>0 then local b2=b1.MoveDirection;aZ.AssemblyLinearVelocity=M(b2.X*ar.SpeedValue,aZ.AssemblyLinearVelocity.Y,b2.Z*ar.SpeedValue)end end;if ar.VehicleSpeedEnabled and aY then local b1=aY:FindFirstChildOfClass("Humanoid")if b1 and b1.SeatPart then local b3=b1.SeatPart;local b4=b3:FindFirstAncestorOfClass("Model")local ao=b4 and b4.PrimaryPart or b3;if b3:IsA("VehicleSeat")then b3.MaxSpeed=9999;b3.Torque=9999 end;local b5=H:IsKeyDown(Enum.KeyCode.W)or b3:IsA("VehicleSeat")and b3.Throttle>0;if b5 and ao then local b6=ao.CFrame.LookVector;ao.AssemblyLinearVelocity=M(b6.X*ar.VehicleSpeedMult,ao.AssemblyLinearVelocity.Y,b6.Z*ar.VehicleSpeedMult)end end end;if ar.FovVisible then W.Position=b0;W.Radius=ar.FovRadius;W.Visible=true else W.Visible=false end;local b7=nil;local b8=nil;local b9=nil;local ba=P;for a6,aj in pairs(X)do if a2(aj.Char,aj.Hum)then local bb=a8(a6)local ax=aj.Root;local bc=aZ and ax and(aZ.Position-ax.Position).Magnitude or P;if ar.EspEnabled and bb and ax and bc<=ar.EspMaxDistance then if not aj.Highlight.Enabled then aj.Highlight.Enabled=true end;if aj.LastColor~=ar.BoxColor then aj.Highlight.FillColor=ar.BoxColor;aj.Highlight.OutlineColor=ar.BoxColor;aj.Label.TextColor3=ar.BoxColor;aj.LastColor=ar.BoxColor end;local aE,bd=K:WorldToViewportPoint(ax.Position)if bd then if not aj.Gui.Enabled then aj.Gui.Enabled=true end;local be=N(aj.Hum.Health/aj.Hum.MaxHealth*100)local bf=(a6.DisplayName or a6.Name).."\n["..N(bc).."m | "..be.."% HP]"if aj.LastText~=bf then aj.Label.Text=bf;aj.LastText=bf end else if aj.Gui.Enabled then aj.Gui.Enabled=false end end else if aj.Highlight.Enabled then aj.Highlight.Enabled=false end;if aj.Gui.Enabled then aj.Gui.Enabled=false end end;if(ar.AimEnabled or ar.FovVisible)and bb and aZ and ax then local ao=ai(aj)if ao then local bg=an(ao)local bh,bd=K:WorldToViewportPoint(bg)if bd then local bi=L(bh.X,bh.Y)local bj=(bi-b0).Magnitude;if bj<=ar.FovRadius and bj<ba then ba=bj;b7=ao;b8=bg;b9=bi end end end end else if aj.Highlight.Enabled then aj.Highlight.Enabled=false end;if aj.Gui.Enabled then aj.Gui.Enabled=false end end end;a0=b7;a1=b8;if ar.AimEnabled and b9 and mousemoverel then local bk=b9-b0;if bk.X*bk.X+bk.Y*bk.Y>2.25 then mousemoverel(bk.X*ar.AimSmoothness,bk.Y*ar.AimSmoothness)end end end)end;x.MouseButton1Click:Connect(function()x.Text=e.KeyVerifyingText;local bl,bm=pcall(function()return game:HttpGet(b):gsub("%s+","")end)local bn=t.Text:gsub("%s+","")if bl and bn==bm and bn~=""then x.Text=e.KeySuccessText;x.BackgroundColor3=Color3.fromRGB(46,204,113)task.wait(1)B()else x.Text=e.KeyErrorText;x.BackgroundColor3=Color3.fromRGB(231,76,60)task.wait(1.5)x.Text=e.KeyVerifyBtn;x.BackgroundColor3=Color3.fromRGB(0,140,255)end end)]])()
+-- =================================================================
+-- PANTELIII PRIVATE HUB - ULTIMATE EDITION (RU/EN)
+-- STARS + OPTIMIZED | FACTIONS ESP | SMART AIM
+-- =================================================================
+
+local LootLabsLink = "https://lootdest.org/s?VTmJryAZ"
+local PastebinKeyURL = "https://pastebin.com/raw/BGzRX2Ft"
+
+if setclipboard then
+    setclipboard(LootLabsLink)
+end
+
+local Translations = {
+    RU = {
+        LangTitle = "Выбор языка / Language",
+        LangSubtitle = "Выберите ваш язык",
+        KeyTitle = "⚡ PANTELIII HUB | Авторизация ⚡",
+        KeySubtitle = "Пройдите LootLabs для получения ключа",
+        KeyInputPlaceholder = "Вставьте ключ сюда...",
+        KeyCopyBtn = "Получить ключ (LootLabs)",
+        KeyCopiedText = "Ссылка скопирована!",
+        KeyVerifyBtn = "Войти",
+        KeyVerifyingText = "Проверка...",
+        KeySuccessText = "Успешно!",
+        KeyErrorText = "Неверный ключ!",
+        KeyUnloadBtn = "Полностью выгрузить софт",
+        KeySuccessTitle = "Успешный вход!",
+        KeySuccessDesc = "Добро пожаловать в Panteliii Hub Ultimate.",
+        TabMain = "Главная",
+        TabAim = "Аимбот",
+        TabPlayer = "Игрок",
+        TabFly = "Жесткий Полёт",
+        TabFarm = "Маршруты / Фарм",
+        TabVehicle = "Машина",
+        TabVisuals = "Визуалы",
+        Creator = "👑 Создатель",
+        CopyKeyBtn = "🔗 СКОПИРОВАТЬ ССЫЛКУ НА КЛЮЧ",
+        UnloadBtn = "❌ ПОЛНОСТЬЮ ОТКЛЮЧИТЬ СОФТ",
+        KeybindLabel = "Быстрая кнопка (Аим / FOV)",
+        CopiedNotify = "Ссылка на получение ключа скопирована!",
+        AimEnable = "Включить Аимбот",
+        AimPart = "Зона наводки",
+        AimParts = {"Торс", "Голова"},
+        Torso = "Торс",
+        Head = "Голова",
+        WallCheck = "Проверка стен (WallCheck)",
+        AutoPred = "Авто-упреждение (Динамика)",
+        AimSmooth = "Жесткость аима",
+        FovVisible = "Показывать круг FOV",
+        FovRadius = "Радиус FOV",
+        FovColor = "Цвет FOV",
+        AimDistNote = "Дистанция наводки синхронизирована со слайдером ESP!",
+        FlyEnable = "Включить жесткий полёт (B)",
+        FlySpeed = "Скорость в транспорте",
+        FlyWalkSpeed = "Скорость пешком",
+        FlyKeybind = "Кнопка активации полёта",
+        TpDealer = "📍 Телепорт к Дилеру",
+        RouteBuy = "🛒 Маршрут: ЗАКУП",
+        RouteWash = "🧼 Маршрут: ОТМЫВ",
+        StopMovement = "⛔ ЗАВЕРШИТЬ ДВИЖЕНИЕ",
+        ClickTp = "Клик-ТП по клику мыши",
+        ClickTpKey = "Кнопка Клик-ТП",
+        SpeedEnable = "Включить Спидхак",
+        SpeedVal = "Скорость",
+        Noclip = "Проход сквозь стены (Noclip)",
+        AntiAfk = "Включить Anti-AFK (Анти-Кик)",
+        VehEnable = "Скорость Авто (Velocity)",
+        VehMult = "Множитель Скорости",
+        EspEnable = "Включить ESP (Хайлайт + Текст)",
+        EspDist = "Дистанция ESP и Аима",
+        EspColor = "Цвет ESP (ВХ)",
+        TeamCheck = "Умный Team Check (Фракции / Классы)",
+        ShowFactions = "Показывать Фракцию / Класс",
+        ShowStars = "Показывать ★ звёзды",
+        EspUpdateRate = "Частота обновления ESP",
+        AltTimerTitle = "Alt Timer",
+        AltTimerEnabled = "Включить Alt-Timer (RightAlt)",
+        AltTimerDuration = "Длительность (мин)",
+        AltTimerPosX = "Позиция X",
+        AltTimerPosY = "Позиция Y",
+        AltTimerSize = "Размер текста",
+        AltTimerColor = "Цвет текста",
+        AltTimerResetKey = "Кнопка сброса",
+        AltTimerShowOnStart = "Показывать при старте"
+    },
+    EN = {
+        LangTitle = "Language Selection / Выбор языка",
+        LangSubtitle = "Select your preferred language",
+        KeyTitle = "⚡ PANTELIII HUB | Authorization ⚡",
+        KeySubtitle = "Complete LootLabs to get the access key",
+        KeyInputPlaceholder = "Paste your key here...",
+        KeyCopyBtn = "Get Key (LootLabs)",
+        KeyCopiedText = "Link copied!",
+        KeyVerifyBtn = "Log In",
+        KeyVerifyingText = "Verifying...",
+        KeySuccessText = "Success!",
+        KeyErrorText = "Invalid Key!",
+        KeyUnloadBtn = "Unload Script Completely",
+        KeySuccessTitle = "Success!",
+        KeySuccessDesc = "Welcome to Panteliii Hub Ultimate.",
+        TabMain = "Main",
+        TabAim = "Aimbot",
+        TabPlayer = "Player",
+        TabFly = "Bypass Fly",
+        TabFarm = "Routes / Farm",
+        TabVehicle = "Vehicle",
+        TabVisuals = "Visuals",
+        Creator = "👑 Creator",
+        CopyKeyBtn = "🔗 COPY KEY LINK",
+        UnloadBtn = "❌ UNLOAD SCRIPT",
+        KeybindLabel = "Quick Toggle Key (Aim / FOV)",
+        CopiedNotify = "Key link copied to clipboard!",
+        AimEnable = "Enable Aimbot",
+        AimPart = "Target Part",
+        AimParts = {"Torso", "Head"},
+        Torso = "Torso",
+        Head = "Head",
+        WallCheck = "Wall Check",
+        AutoPred = "Auto Prediction",
+        AimSmooth = "Aim Smoothness",
+        FovVisible = "Show FOV Circle",
+        FovRadius = "FOV Radius",
+        FovColor = "FOV Color",
+        AimDistNote = "Aim distance is synced with ESP distance slider!",
+        FlyEnable = "Enable Bypass Fly (B)",
+        FlySpeed = "Vehicle Flight Speed",
+        FlyWalkSpeed = "On-Foot Flight Speed",
+        FlyKeybind = "Fly Toggle Key",
+        TpDealer = "📍 Teleport to Dealer",
+        RouteBuy = "🛒 Route: PURCHASE",
+        RouteWash = "🧼 Route: WASH",
+        StopMovement = "⛔ STOP ALL MOVEMENT",
+        ClickTp = "Click-TP on Mouse",
+        ClickTpKey = "Click-TP Toggle Key",
+        SpeedEnable = "Enable Speedhack",
+        SpeedVal = "Speed Value",
+        Noclip = "Noclip",
+        AntiAfk = "Anti-AFK",
+        VehEnable = "Vehicle Speed (Velocity)",
+        VehMult = "Speed Multiplier",
+        EspEnable = "Enable ESP (Chams + Info)",
+        EspDist = "ESP & Aim Distance",
+        EspColor = "ESP Color",
+        TeamCheck = "Smart Team Check (Factions / Classes)",
+        ShowFactions = "Display Faction / Class",
+        ShowStars = "Show ★ Stars",
+        EspUpdateRate = "ESP update rate",
+        AltTimerTitle = "Alt Timer",
+        AltTimerEnabled = "Enable Alt-Timer (RightAlt)",
+        AltTimerDuration = "Duration (min)",
+        AltTimerPosX = "Position X",
+        AltTimerPosY = "Position Y",
+        AltTimerSize = "Text Size",
+        AltTimerColor = "Text Color",
+        AltTimerResetKey = "Reset Key",
+        AltTimerShowOnStart = "Show On Start"
+    }
+}
+
+local SelectedLang = nil
+local L = nil
+
+local LangGui = Instance.new("ScreenGui")
+local LangFrame = Instance.new("Frame")
+local LangUICorner = Instance.new("UICorner")
+local LangTitle = Instance.new("TextLabel")
+local LangSubtitle = Instance.new("TextLabel")
+local RuBtn = Instance.new("TextButton")
+local RuCorner = Instance.new("UICorner")
+local EnBtn = Instance.new("TextButton")
+local EnCorner = Instance.new("UICorner")
+
+LangGui.Name = "PanteliiiLangSelect"
+LangGui.Parent = game:GetService("CoreGui") or game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui")
+
+LangFrame.Name = "LangFrame"
+LangFrame.Parent = LangGui
+LangFrame.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
+LangFrame.Position = UDim2.new(0.5, -150, 0.5, -80)
+LangFrame.Size = UDim2.new(0, 300, 0, 160)
+LangFrame.Active = true
+LangFrame.Draggable = true
+
+LangUICorner.CornerRadius = UDim.new(0, 10)
+LangUICorner.Parent = LangFrame
+
+LangTitle.Parent = LangFrame
+LangTitle.BackgroundTransparency = 1
+LangTitle.Position = UDim2.new(0, 0, 0, 12)
+LangTitle.Size = UDim2.new(1, 0, 0, 25)
+LangTitle.Font = Enum.Font.SourceSansBold
+LangTitle.Text = "⚡ PANTELIII HUB ⚡"
+LangTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+LangTitle.TextSize = 18
+
+LangSubtitle.Parent = LangFrame
+LangSubtitle.BackgroundTransparency = 1
+LangSubtitle.Position = UDim2.new(0, 0, 0, 35)
+LangSubtitle.Size = UDim2.new(1, 0, 0, 20)
+LangSubtitle.Font = Enum.Font.SourceSans
+LangSubtitle.Text = "Select Language / Выберите язык"
+LangSubtitle.TextColor3 = Color3.fromRGB(160, 160, 160)
+LangSubtitle.TextSize = 14
+
+RuBtn.Parent = LangFrame
+RuBtn.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+RuBtn.Position = UDim2.new(0.1, 0, 0.45, 0)
+RuBtn.Size = UDim2.new(0.38, 0, 0, 40)
+RuBtn.Font = Enum.Font.SourceSansBold
+RuBtn.Text = "🇷🇺 Русский"
+RuBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
+RuBtn.TextSize = 15
+RuCorner.CornerRadius = UDim.new(0, 6)
+RuCorner.Parent = RuBtn
+
+EnBtn.Parent = LangFrame
+EnBtn.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+EnBtn.Position = UDim2.new(0.52, 0, 0.45, 0)
+EnBtn.Size = UDim2.new(0.38, 0, 0, 40)
+EnBtn.Font = Enum.Font.SourceSansBold
+EnBtn.Text = "🇬🇧 English"
+EnBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
+EnBtn.TextSize = 15
+EnCorner.CornerRadius = UDim.new(0, 6)
+EnCorner.Parent = EnBtn
+
+RuBtn.MouseButton1Click:Connect(function()
+    SelectedLang = "RU"
+    L = Translations.RU
+    LangGui:Destroy()
+end)
+
+EnBtn.MouseButton1Click:Connect(function()
+    SelectedLang = "EN"
+    L = Translations.EN
+    LangGui:Destroy()
+end)
+
+repeat task.wait(0.1) until SelectedLang ~= nil
+task.wait(0.2)
+
+local AuthGui = Instance.new("ScreenGui")
+local MainFrame = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local Title = Instance.new("TextLabel")
+local Subtitle = Instance.new("TextLabel")
+local KeyInput = Instance.new("TextBox")
+local UICorner_2 = Instance.new("UICorner")
+local CopyBtn = Instance.new("TextButton")
+local UICorner_3 = Instance.new("UICorner")
+local VerifyBtn = Instance.new("TextButton")
+local UICorner_4 = Instance.new("UICorner")
+local UnloadBtnAuth = Instance.new("TextButton")
+local UICorner_5 = Instance.new("UICorner")
+
+AuthGui.Name = "PanteliiiAuth"
+AuthGui.Parent = game:GetService("CoreGui") or game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui")
+
+MainFrame.Name = "MainFrame"
+MainFrame.Parent = AuthGui
+MainFrame.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
+MainFrame.Position = UDim2.new(0.5, -175, 0.5, -130)
+MainFrame.Size = UDim2.new(0, 350, 0, 260)
+MainFrame.Active = true
+MainFrame.Draggable = true
+
+UICorner.CornerRadius = UDim.new(0, 10)
+UICorner.Parent = MainFrame
+
+Title.Parent = MainFrame
+Title.BackgroundTransparency = 1
+Title.Position = UDim2.new(0, 0, 0, 10)
+Title.Size = UDim2.new(1, 0, 0, 25)
+Title.Font = Enum.Font.SourceSansBold
+Title.Text = L.KeyTitle
+Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title.TextSize = 17
+
+Subtitle.Parent = MainFrame
+Subtitle.BackgroundTransparency = 1
+Subtitle.Position = UDim2.new(0, 0, 0, 32)
+Subtitle.Size = UDim2.new(1, 0, 0, 20)
+Subtitle.Font = Enum.Font.SourceSans
+Subtitle.Text = L.KeySubtitle
+Subtitle.TextColor3 = Color3.fromRGB(160, 160, 160)
+Subtitle.TextSize = 13
+
+KeyInput.Parent = MainFrame
+KeyInput.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+KeyInput.Position = UDim2.new(0.08, 0, 0.28, 0)
+KeyInput.Size = UDim2.new(0.84, 0, 0, 36)
+KeyInput.Font = Enum.Font.SourceSans
+KeyInput.PlaceholderText = L.KeyInputPlaceholder
+KeyInput.Text = ""
+KeyInput.TextColor3 = Color3.fromRGB(255, 255, 255)
+KeyInput.TextSize = 15
+UICorner_2.CornerRadius = UDim.new(0, 6)
+UICorner_2.Parent = KeyInput
+
+CopyBtn.Parent = MainFrame
+CopyBtn.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+CopyBtn.Position = UDim2.new(0.08, 0, 0.46, 0)
+CopyBtn.Size = UDim2.new(0.84, 0, 0, 30)
+CopyBtn.Font = Enum.Font.SourceSansBold
+CopyBtn.Text = L.KeyCopyBtn
+CopyBtn.TextColor3 = Color3.fromRGB(200, 200, 200)
+CopyBtn.TextSize = 14
+UICorner_3.CornerRadius = UDim.new(0, 6)
+UICorner_3.Parent = CopyBtn
+
+VerifyBtn.Parent = MainFrame
+VerifyBtn.BackgroundColor3 = Color3.fromRGB(0, 140, 255)
+VerifyBtn.Position = UDim2.new(0.08, 0, 0.61, 0)
+VerifyBtn.Size = UDim2.new(0.84, 0, 0, 32)
+VerifyBtn.Font = Enum.Font.SourceSansBold
+VerifyBtn.Text = L.KeyVerifyBtn
+VerifyBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
+VerifyBtn.TextSize = 15
+UICorner_4.CornerRadius = UDim.new(0, 6)
+UICorner_4.Parent = VerifyBtn
+
+UnloadBtnAuth.Parent = MainFrame
+UnloadBtnAuth.BackgroundColor3 = Color3.fromRGB(180, 40, 40)
+UnloadBtnAuth.Position = UDim2.new(0.08, 0, 0.77, 0)
+UnloadBtnAuth.Size = UDim2.new(0.84, 0, 0, 30)
+UnloadBtnAuth.Font = Enum.Font.SourceSansBold
+UnloadBtnAuth.Text = L.KeyUnloadBtn
+UnloadBtnAuth.TextColor3 = Color3.fromRGB(255, 255, 255)
+UnloadBtnAuth.TextSize = 14
+UICorner_5.CornerRadius = UDim.new(0, 6)
+UICorner_5.Parent = UnloadBtnAuth
+
+CopyBtn.MouseButton1Click:Connect(function()
+    if setclipboard then
+        setclipboard(LootLabsLink)
+        CopyBtn.Text = L.KeyCopiedText
+        task.wait(2)
+        CopyBtn.Text = L.KeyCopyBtn
+    end
+end)
+
+UnloadBtnAuth.MouseButton1Click:Connect(function()
+    AuthGui:Destroy()
+end)
+
+local function StartMainScript()
+    AuthGui:Destroy()
+
+    local RayfieldMain = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+    local Window = RayfieldMain:CreateWindow({
+        Name = "⚡ PANTELIII HUB | ULTIMATE ⚡",
+        LoadingTitle = "Panteliii Hub Loading...",
+        LoadingSubtitle = "by Panteliii",
+        ConfigurationSaving = { Enabled = false },
+        Discord = { Enabled = false },
+        KeySystem = false
+    })
+
+    pcall(function()
+        RayfieldMain:Notify({
+            Title = L.KeySuccessTitle,
+            Content = L.KeySuccessDesc,
+            Duration = 4
+        })
+    end)
+
+    local Players = game:GetService("Players")
+    local Workspace = game:GetService("Workspace")
+    local RunService = game:GetService("RunService")
+    local UserInputService = game:GetService("UserInputService")
+    local VirtualUser = game:GetService("VirtualUser")
+
+    local LocalPlayer = Players.LocalPlayer
+    local Camera = Workspace.CurrentCamera
+    local Mouse = LocalPlayer:GetMouse()
+
+    local Vector2_new = Vector2.new
+    local Vector3_new = Vector3.new
+    local CFrame_new = CFrame.new
+    local math_floor = math.floor
+    local math_max = math.max
+    local math_min = math.min
+    local math_huge = math.huge
+    local table_unpack = table.unpack or unpack
+    local table_clear = table.clear
+
+    local mousemoverel = mousemoverel or (Input and Input.MoveMouseRelative) or syn_mousemoverel or (mousemoveabs and function(x, y) mousemoveabs(x, y) end)
+    local isnetworkowner = isnetworkowner or function(part) return true end
+
+    local DealerPosition = Vector3_new(209.0, 17.3, -46.5)
+
+    local PurchaseWaypoints = {
+        Vector3_new(6820.9, 17.5, -42.2),
+        Vector3_new(6850.5, 17.5, -43.3),
+        Vector3_new(6849.0, 17.3, 23.6),
+        Vector3_new(6805.6, 17.5, 23.0)
+    }
+
+    local WashWaypoints = {
+        Vector3_new(6855.918, 17.443, -44.431),
+        Vector3_new(6818.692, 17.469, -41.972),
+        Vector3_new(6806.817, 17.469, -33.604)
+    }
+
+    getgenv().PanteliiiConfig = {
+        -- Player & Car
+        SpeedEnabled = false,
+        SpeedValue = 16,
+        NoclipEnabled = false,
+        AntiAfkEnabled = false,
+        VehicleSpeedEnabled = false,
+        VehicleSpeedMult = 200,
+
+        -- Aim (как было — не трогаем)
+        AimEnabled = false,
+        FovVisible = false,
+        FovRadius = 180,
+        FovColor = Color3.fromRGB(0, 200, 255),
+        AimPartMode = L.Torso,
+        WallCheck = true,
+        AutoPrediction = true,
+        BulletSpeed = 1600,
+        ManualPrediction = 0.045,
+        AimSmoothness = 0.25,
+        MasterKeycode = Enum.KeyCode.Q,
+
+        -- Visuals
+        EspEnabled = false,
+        EspMaxDistance = 1500,
+        BoxColor = Color3.fromRGB(0, 200, 255),
+        TeamCheck = true,
+        ShowFactions = true,
+        ShowStars = true,
+        EspUpdateRate = 0.1,
+
+        -- Fly
+        FlyBypassEnabled = false,
+        FlySpeed = 256,
+        FlyWalkSpeed = 50,
+        FlyKey = Enum.KeyCode.B,
+        SpeedKeyMultiplier = 2,
+        Smoothness = 0.15,
+        TurnSmoothness = 8,
+
+        -- Routes
+        FlyRouteHeight = 19,
+        FlyRouteSpeed = 200,
+        ClickTpEnabled = false,
+        ClickTpKey = Enum.KeyCode.Q,
+
+        -- Alt Timer
+        AltTimerEnabled = true,
+        AltTimerDuration = 360,
+        AltTimerPosX = 378,
+        AltTimerPosY = 10,
+        AltTimerSize = 40,
+        AltTimerColor = Color3.fromRGB(255, 255, 255),
+        AltTimerResetKey = Enum.KeyCode.RightAlt,
+        AltTimerShowOnStart = false
+    }
+    local StaticRayParams = RaycastParams.new()
+    StaticRayParams.FilterType = Enum.RaycastFilterType.Exclude
+    StaticRayParams.IgnoreWater = true
+    local IgnoreTable = table.create(3)
+
+    local FOVCircle = Drawing.new("Circle")
+    FOVCircle.Thickness = 1.5
+    FOVCircle.Color = getgenv().PanteliiiConfig.FovColor
+    FOVCircle.Filled = false
+    FOVCircle.Transparency = 1
+    FOVCircle.NumSides = 36
+    FOVCircle.Visible = false
+
+    local ESP_Cache = {}
+    local Connections = {}
+    local PlayerCharConnections = {}
+    local RenderConnection = nil
+    local CurrentTargetPart = nil
+    local CurrentTargetPredPos = nil
+
+    local FlyBodyVelocity = nil
+    local FlyBodyGyro = nil
+    local FlyCurrentVelocity = Vector3_new(0, 0, 0)
+    local FlySmoothRotation = nil
+    local FlyHeartbeatConn = nil
+
+    local ActiveRouteWaypoints = nil
+    local CurrentRouteIndex = 1
+    local RouteTargetPoint = nil
+    local RouteConnection = nil
+    local IsRouteRunning = false
+
+    -- ============ ALT TIMER SETUP ============
+    local AltTimerGui = Instance.new("ScreenGui")
+    AltTimerGui.Name = "AltTimer"
+    AltTimerGui.ResetOnSpawn = false
+    AltTimerGui.IgnoreGuiInset = true
+    AltTimerGui.Parent = game:GetService("CoreGui") or LocalPlayer:WaitForChild("PlayerGui")
+
+    local AltTimerLabel = Instance.new("TextLabel")
+    AltTimerLabel.Size = UDim2.new(0, 100, 0, 40)
+    AltTimerLabel.Position = UDim2.new(0, getgenv().PanteliiiConfig.AltTimerPosX, 0, getgenv().PanteliiiConfig.AltTimerPosY)
+    AltTimerLabel.BackgroundTransparency = 1
+    AltTimerLabel.Font = Enum.Font.GothamBold
+    AltTimerLabel.TextScaled = true
+    AltTimerLabel.TextColor3 = getgenv().PanteliiiConfig.AltTimerColor
+    AltTimerLabel.TextStrokeTransparency = 0
+    AltTimerLabel.Text = "00:00"
+    AltTimerLabel.Visible = getgenv().PanteliiiConfig.AltTimerShowOnStart
+    AltTimerLabel.Parent = AltTimerGui
+
+    local altRemaining = getgenv().PanteliiiConfig.AltTimerDuration
+    local altRunning = getgenv().PanteliiiConfig.AltTimerShowOnStart
+    local altVisible = getgenv().PanteliiiConfig.AltTimerShowOnStart
+    local altAccum = 0
+
+    local function AltUpdateLabel()
+        local m = math_floor(altRemaining / 60)
+        local s = altRemaining % 60
+        AltTimerLabel.Text = string.format("%02d:%02d", m, s)
+    end
+
+    local function AltApplyStyle()
+        AltTimerLabel.Position = UDim2.new(0, getgenv().PanteliiiConfig.AltTimerPosX, 0, getgenv().PanteliiiConfig.AltTimerPosY)
+        AltTimerLabel.TextSize = getgenv().PanteliiiConfig.AltTimerSize
+        AltTimerLabel.TextColor3 = getgenv().PanteliiiConfig.AltTimerColor
+    end
+
+    if altVisible then AltUpdateLabel() end
+
+    table.insert(Connections, UserInputService.InputBegan:Connect(function(input, processed)
+        if processed then return end
+        local cfg = getgenv().PanteliiiConfig
+        if not cfg.AltTimerEnabled then return end
+        if input.KeyCode == cfg.AltTimerResetKey then
+            if not altVisible then
+                altRemaining = cfg.AltTimerDuration
+                altVisible = true
+                altRunning = true
+                altAccum = 0
+                AltTimerLabel.Visible = true
+                AltUpdateLabel()
+            else
+                altVisible = false
+                altRunning = false
+                AltTimerLabel.Visible = false
+            end
+        end
+    end))
+
+    table.insert(Connections, RunService.RenderStepped:Connect(function(dt)
+        if not altRunning then return end
+        altAccum = altAccum + dt
+        if altAccum >= 1 then
+            altAccum = altAccum - 1
+            altRemaining = altRemaining - 1
+            if altRemaining <= 0 then
+                altRemaining = 0
+                altRunning = false
+            end
+            AltUpdateLabel()
+        end
+    end))
+    -- ==========================================
+
+    local function IsAlive(char, hum)
+        if not char then return false end
+        hum = hum or char:FindFirstChildOfClass("Humanoid")
+        return hum and hum.Health > 0 and hum:GetState() ~= Enum.HumanoidStateType.Dead
+    end
+
+    -- ============ ФРАКЦИИ (через player.Team) ============
+    local function GetPlayerFaction(player)
+        if not player then return "None" end
+        if player.Team and player.Team.Name then return player.Team.Name end
+        return "None"
+    end
+
+    local function IsCivilian(player)
+        if not player or not player.Team then return false end
+        return player.Team.Name == "Civilian"
+    end
+
+    local function CheckIsEnemy(player)
+        if not player or player == LocalPlayer then return false end
+        if not getgenv().PanteliiiConfig.TeamCheck then return true end
+
+        local meCiv = IsCivilian(LocalPlayer)
+        local tgtCiv = IsCivilian(player)
+
+        if meCiv then
+            return not tgtCiv
+        end
+        return tgtCiv
+    end
+    -- ======================================================
+
+    -- ============ ЗВЁЗДЫ ============
+    local function GetStars(player)
+        local char = player.Character
+        if not char then return 0 end
+
+        local hrp = char:FindFirstChild("HumanoidRootPart")
+        if not hrp then return 0 end
+
+        local ng = hrp:FindFirstChild("NametagGui")
+        if not ng then return 0 end
+
+        local ws = ng:FindFirstChild("WantedStars")
+        if not ws then return 0 end
+
+        local count = 0
+        for _, c in ipairs(ws:GetChildren()) do
+            if c:IsA("ImageLabel") and c.Visible then
+                count = count + 1
+            end
+        end
+        return count
+    end
+    -- ================================
+
+    local function IsVisibleFast(part, character)
+        if not getgenv().PanteliiiConfig.WallCheck then return true end
+        if not part or not part.Parent then return false end
+
+        local origin = Camera.CFrame.Position
+        local targetPos = part.Position
+
+        table_clear(IgnoreTable)
+        IgnoreTable[1] = Camera
+        if LocalPlayer.Character then IgnoreTable[2] = LocalPlayer.Character end
+        if character then IgnoreTable[3] = character end
+
+        StaticRayParams.FilterDescendantsInstances = IgnoreTable
+        local result = Workspace:Raycast(origin, targetPos - origin, StaticRayParams)
+        if not result then return true end
+
+        local hit = result.Instance
+        return hit:IsDescendantOf(character) or hit.CanCollide == false or hit.Transparency >= 0.75 or hit:IsA("Seat") or hit:IsA("VehicleSeat")
+    end
+
+    local function GetSelectedPart(data)
+        if not data or not IsAlive(data.Char, data.Hum) then return nil end
+        local isHeadMode = (getgenv().PanteliiiConfig.AimPartMode == L.Head or getgenv().PanteliiiConfig.AimPartMode == "Голова" or getgenv().PanteliiiConfig.AimPartMode == "Head")
+        local primary = isHeadMode and data.Head or data.Root
+        local secondary = isHeadMode and data.Root or data.Head
+
+        if primary and IsVisibleFast(primary, data.Char) then return primary end
+        if secondary and IsVisibleFast(secondary, data.Char) then return secondary end
+        return nil
+    end
+
+    local function CalculatePredictedPosition(targetPart)
+        local targetPos = targetPart.Position
+        local root = targetPart.Parent:FindFirstChild("HumanoidRootPart") or targetPart
+        local vel = root.AssemblyLinearVelocity
+
+        if (vel.X * vel.X + vel.Y * vel.Y + vel.Z * vel.Z) > 0.01 then
+            local cfg = getgenv().PanteliiiConfig
+            local predTime = cfg.ManualPrediction
+            if cfg.AutoPrediction then
+                local dist = (Camera.CFrame.Position - targetPos).Magnitude
+                predTime = dist / math_max(cfg.BulletSpeed, 100)
+            end
+
+            return Vector3_new(
+                targetPos.X + (vel.X * predTime),
+                targetPos.Y + (vel.Y * predTime) + (98.1 * (predTime ^ 2)),
+                targetPos.Z + (vel.Z * predTime)
+            )
+        end
+        return targetPos
+    end
+
+    local function CleanupESP(key)
+        local data = ESP_Cache[key]
+        if data then
+            if data.Highlight then data.Highlight:Destroy() end
+            if data.Gui then data.Gui:Destroy() end
+            ESP_Cache[key] = nil
+        end
+    end
+
+    local function RegisterCharacter(player, char)
+        if player == LocalPlayer then return end
+        CleanupESP(player)
+
+        task.spawn(function()
+            local rootPart = char:WaitForChild("HumanoidRootPart", 4)
+                or char:WaitForChild("UpperTorso", 4)
+                or char:WaitForChild("Torso", 4)
+                or char:WaitForChild("Head", 4)
+            local head = char:WaitForChild("Head", 4)
+            local hum = char:WaitForChild("Humanoid", 4)
+
+            if not rootPart or not hum or not char.Parent then return end
+
+            local highlight = Instance.new("Highlight")
+            highlight.Name = "P_Highlight"
+            highlight.Adornee = char
+            highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+            highlight.FillColor = getgenv().PanteliiiConfig.BoxColor
+            highlight.FillTransparency = 0.5
+            highlight.OutlineColor = getgenv().PanteliiiConfig.BoxColor
+            highlight.OutlineTransparency = 0
+            highlight.Enabled = false
+            highlight.Parent = char
+
+            local bgui = Instance.new("BillboardGui")
+            bgui.Name = "P_ESP"
+            bgui.Adornee = rootPart
+            bgui.Size = UDim2.new(0, 180, 0, 45)
+            bgui.StudsOffset = Vector3_new(0, 3.8, 0)
+            bgui.AlwaysOnTop = true
+            bgui.Enabled = false
+
+            local textLabel = Instance.new("TextLabel")
+            textLabel.Size = UDim2.new(1, 0, 1, 0)
+            textLabel.BackgroundTransparency = 1
+            textLabel.TextColor3 = getgenv().PanteliiiConfig.BoxColor
+            textLabel.TextStrokeTransparency = 0
+            textLabel.TextSize = 11
+            textLabel.Font = Enum.Font.SourceSansBold
+            textLabel.Parent = bgui
+            bgui.Parent = rootPart
+
+            ESP_Cache[player] = {
+                Highlight = highlight,
+                Gui = bgui,
+                Label = textLabel,
+                Char = char,
+                Player = player,
+                Root = rootPart,
+                Head = head,
+                Hum = hum,
+                LastText = "",
+                LastColor = nil,
+                LastStars = -1,
+                LastStarsTick = 0
+            }
+        end)
+    end
+
+    local function HookPlayer(plr)
+        if plr == LocalPlayer then return end
+        if PlayerCharConnections[plr] then
+            PlayerCharConnections[plr]:Disconnect()
+        end
+
+        if plr.Character then RegisterCharacter(plr, plr.Character) end
+        PlayerCharConnections[plr] = plr.CharacterAdded:Connect(function(char)
+            RegisterCharacter(plr, char)
+        end)
+    end
+
+    for _, plr in ipairs(Players:GetPlayers()) do HookPlayer(plr) end
+    table.insert(Connections, Players.PlayerAdded:Connect(HookPlayer))
+    table.insert(Connections, Players.PlayerRemoving:Connect(function(plr)
+        if PlayerCharConnections[plr] then
+            PlayerCharConnections[plr]:Disconnect()
+            PlayerCharConnections[plr] = nil
+        end
+        CleanupESP(plr)
+    end))
+
+    local function ExitVehicle()
+        local char = LocalPlayer.Character
+        if not char then return end
+        local hum = char:FindFirstChildOfClass("Humanoid")
+        if hum and hum.Sit then
+            hum.Sit = false
+            task.wait(0.05)
+        end
+    end
+
+    local function TeleportTo(pos)
+        local char = LocalPlayer.Character
+        if not char then return end
+        ExitVehicle()
+
+        local hrp = char:FindFirstChild("HumanoidRootPart")
+        if not hrp then return end
+
+        local safeCF = CFrame_new(pos.X, pos.Y + 3.5, pos.Z)
+        hrp.CFrame = safeCF
+        hrp.AssemblyLinearVelocity = Vector3_new(0, 0, 0)
+        hrp.AssemblyAngularVelocity = Vector3_new(0, 0, 0)
+    end
+
+    local function CleanupBypassFly()
+        if FlyBodyVelocity then FlyBodyVelocity:Destroy() FlyBodyVelocity = nil end
+        if FlyBodyGyro then FlyBodyGyro:Destroy() FlyBodyGyro = nil end
+        FlyCurrentVelocity = Vector3_new(0, 0, 0)
+        FlySmoothRotation = nil
+    end
+
+    local function CreateBypassObjects(targetPart)
+        CleanupBypassFly()
+
+        FlyBodyVelocity = Instance.new("BodyVelocity")
+        FlyBodyVelocity.Name = "FlyBypassVelocity"
+        FlyBodyVelocity.MaxForce = Vector3_new(math_huge, math_huge, math_huge)
+        FlyBodyVelocity.P = 12500
+        FlyBodyVelocity.Velocity = Vector3_new(0, 0, 0)
+        FlyBodyVelocity.Parent = targetPart
+
+        FlyBodyGyro = Instance.new("BodyGyro")
+        FlyBodyGyro.Name = "FlyBypassGyro"
+        FlyBodyGyro.MaxTorque = Vector3_new(math_huge, math_huge, math_huge)
+        FlyBodyGyro.P = 10000
+        FlyBodyGyro.D = 500
+        FlyBodyGyro.CFrame = targetPart.CFrame
+        FlyBodyGyro.Parent = targetPart
+    end
+
+    local function ProcessFlight(delta)
+        local cfg = getgenv().PanteliiiConfig
+        local char = LocalPlayer.Character
+        if not char then return end
+        local hum = char:FindFirstChildOfClass("Humanoid")
+        local inVehicle = (hum and hum.Sit)
+
+        local currentSpeed = inVehicle and cfg.FlySpeed or cfg.FlyWalkSpeed
+        local targetVelocity = Vector3_new(0, 0, 0)
+
+        if not UserInputService:GetFocusedTextBox() then
+            if UserInputService:IsKeyDown(Enum.KeyCode.W) then
+                targetVelocity = targetVelocity + (Camera.CFrame.LookVector * currentSpeed)
+            end
+            if UserInputService:IsKeyDown(Enum.KeyCode.A) then
+                targetVelocity = targetVelocity - (Camera.CFrame.RightVector * currentSpeed)
+            end
+            if UserInputService:IsKeyDown(Enum.KeyCode.S) then
+                targetVelocity = targetVelocity - (Camera.CFrame.LookVector * currentSpeed)
+            end
+            if UserInputService:IsKeyDown(Enum.KeyCode.D) then
+                targetVelocity = targetVelocity + (Camera.CFrame.RightVector * currentSpeed)
+            end
+            if UserInputService:IsKeyDown(Enum.KeyCode.Space) then
+                targetVelocity = targetVelocity + (Camera.CFrame.UpVector * currentSpeed)
+            end
+            if UserInputService:IsKeyDown(Enum.KeyCode.LeftControl) or UserInputService:IsKeyDown(Enum.KeyCode.LeftShift) then
+                targetVelocity = targetVelocity * cfg.SpeedKeyMultiplier
+            end
+        end
+
+        local root = char:FindFirstChild("HumanoidRootPart")
+        if not root then return end
+        local targetPart = root:GetRootPart() or root
+
+        if not targetPart or targetPart.Anchored or not isnetworkowner(targetPart) then return end
+
+        if not FlyBodyVelocity or not FlyBodyVelocity.Parent then
+            CreateBypassObjects(targetPart)
+        end
+
+        FlyCurrentVelocity = FlyCurrentVelocity + (targetVelocity - FlyCurrentVelocity) * math_min(1, delta * (1 / cfg.Smoothness))
+
+        if targetVelocity.Magnitude < 0.1 then
+            FlyCurrentVelocity = FlyCurrentVelocity * 0.95
+        end
+
+        FlyBodyVelocity.Velocity = FlyCurrentVelocity + Vector3_new(0, 2, 0)
+        pcall(function()
+            targetPart.AssemblyLinearVelocity = FlyCurrentVelocity + Vector3_new(0, 2, 0)
+        end)
+
+        local camDir = Camera.CFrame.LookVector
+        local flatDir = Vector3_new(camDir.X, 0, camDir.Z)
+
+        if flatDir.Magnitude > 0.001 then
+            flatDir = flatDir.Unit
+            local targetCF = CFrame.lookAt(targetPart.Position, targetPart.Position + flatDir)
+
+            if not FlySmoothRotation then
+                FlySmoothRotation = targetCF
+            end
+
+            FlySmoothRotation = FlySmoothRotation:Lerp(targetCF, math_min(1, delta * cfg.TurnSmoothness))
+
+            if FlyBodyGyro then
+                FlyBodyGyro.CFrame = FlySmoothRotation
+            end
+
+            targetPart.CFrame = CFrame_new(targetPart.Position) * FlySmoothRotation.Rotation
+            targetPart.RotVelocity = Vector3_new(0, 0, 0)
+        end
+    end
+
+    local function ToggleBypassFly(state)
+        getgenv().PanteliiiConfig.FlyBypassEnabled = state
+        if FlyHeartbeatConn then
+            FlyHeartbeatConn:Disconnect()
+            FlyHeartbeatConn = nil
+        end
+        CleanupBypassFly()
+
+        if state then
+            local char = LocalPlayer.Character
+            local root = char and char:FindFirstChild("HumanoidRootPart")
+            if root then FlyCurrentVelocity = root.Velocity end
+            FlyHeartbeatConn = RunService.Heartbeat:Connect(ProcessFlight)
+        end
+    end
+
+    local function StopMovementAndRoutes()
+        IsRouteRunning = false
+        if RouteConnection then
+            RouteConnection:Disconnect()
+            RouteConnection = nil
+        end
+
+        ActiveRouteWaypoints = nil
+        RouteTargetPoint = nil
+
+        local char = LocalPlayer.Character
+        if char then
+            local hum = char:FindFirstChildOfClass("Humanoid")
+            if hum then
+                hum.PlatformStand = false
+                hum.AutoRotate = true
+                hum.Sit = false
+            end
+
+            local root = char:FindFirstChild("HumanoidRootPart")
+            if root then
+                root.AssemblyLinearVelocity = Vector3_new(0, 0, 0)
+                root.AssemblyAngularVelocity = Vector3_new(0, 0, 0)
+            end
+        end
+
+        pcall(function()
+            RayfieldMain:Notify({
+                Title = "Маршруты",
+                Content = "Движение остановлено!",
+                Duration = 2
+            })
+        end)
+    end
+
+    local function RouteStep(delta)
+        if not IsRouteRunning or not RouteTargetPoint then return end
+
+        local char = LocalPlayer.Character
+        local root = char and char:FindFirstChild("HumanoidRootPart")
+        local hum = char and char:FindFirstChildOfClass("Humanoid")
+
+        if not root or not hum then
+            StopMovementAndRoutes()
+            return
+        end
+
+        hum.PlatformStand = true
+        hum.AutoRotate = false
+
+        local currentPos = root.Position
+        local targetVirtual = Vector3_new(RouteTargetPoint.X, getgenv().PanteliiiConfig.FlyRouteHeight, RouteTargetPoint.Z)
+        local horizontalDist = (Vector2_new(targetVirtual.X, targetVirtual.Z) - Vector2_new(currentPos.X, currentPos.Z)).Magnitude
+
+        if horizontalDist < 2.5 then
+            CurrentRouteIndex = CurrentRouteIndex + 1
+            if CurrentRouteIndex > #ActiveRouteWaypoints then
+                StopMovementAndRoutes()
+                pcall(function()
+                    RayfieldMain:Notify({
+                        Title = "Маршрут",
+                        Content = "Маршрут успешно завершен!",
+                        Duration = 3
+                    })
+                end)
+                return
+            end
+            RouteTargetPoint = ActiveRouteWaypoints[CurrentRouteIndex]
+            return
+        end
+
+        local direction = (targetVirtual - currentPos).Unit
+        local vel = direction * getgenv().PanteliiiConfig.FlyRouteSpeed
+
+        local heightDiff = targetVirtual.Y - currentPos.Y
+        if math.abs(heightDiff) > 1.5 then
+            vel = vel + Vector3_new(0, heightDiff * 2, 0)
+        end
+
+        root.AssemblyLinearVelocity = vel
+        root.CFrame = CFrame.lookAt(root.Position, root.Position + Vector3_new(direction.X, 0, direction.Z))
+
+        if currentPos.Y < 0 then
+            root.CFrame = CFrame_new(Vector3_new(currentPos.X, getgenv().PanteliiiConfig.FlyRouteHeight, currentPos.Z))
+            root.AssemblyLinearVelocity = Vector3_new(0, 0, 0)
+        end
+    end
+
+    local function StartAutoRoute(waypointsList, name)
+        StopMovementAndRoutes()
+        local char = LocalPlayer.Character
+        local root = char and char:FindFirstChild("HumanoidRootPart")
+        if not root then return end
+
+        ActiveRouteWaypoints = waypointsList
+        local closestIndex = 1
+        local closestDist = math_huge
+
+        for i, pt in ipairs(waypointsList) do
+            local d = (Vector2_new(pt.X, pt.Z) - Vector2_new(root.Position.X, root.Position.Z)).Magnitude
+            if d < closestDist then
+                closestDist = d
+                closestIndex = i
+            end
+        end
+
+        CurrentRouteIndex = closestIndex
+        RouteTargetPoint = ActiveRouteWaypoints[closestIndex]
+        IsRouteRunning = true
+
+        pcall(function()
+            RayfieldMain:Notify({
+                Title = "Маршрут: " .. name,
+                Content = "Запущен с точки #" .. closestIndex,
+                Duration = 3
+            })
+        end)
+
+        RouteConnection = RunService.Heartbeat:Connect(RouteStep)
+    end
+
+    table.insert(Connections, LocalPlayer.Idled:Connect(function()
+        if getgenv().PanteliiiConfig.AntiAfkEnabled then
+            VirtualUser:CaptureController()
+            VirtualUser:ClickButton2(Vector2_new(0, 0))
+        end
+    end))
+
+    local function UnloadScript()
+        pcall(function()
+            if RenderConnection then RenderConnection:Disconnect() end
+            if FlyHeartbeatConn then FlyHeartbeatConn:Disconnect() end
+            if RouteConnection then RouteConnection:Disconnect() end
+            if AltTimerGui then AltTimerGui:Destroy() end
+            CleanupBypassFly()
+            StopMovementAndRoutes()
+
+            for _, conn in ipairs(Connections) do if conn then conn:Disconnect() end end
+            for _, conn in pairs(PlayerCharConnections) do if conn then conn:Disconnect() end end
+            Connections = {}
+            PlayerCharConnections = {}
+
+            FOVCircle.Visible = false
+            FOVCircle:Remove()
+
+            for key, _ in pairs(ESP_Cache) do CleanupESP(key) end
+            RayfieldMain:Destroy()
+        end)
+    end
+
+    if hookmetamethod and getnamecallmethod then
+        local OldNamecall
+        local closureWrapper = newcclosure or function(f) return f end
+
+        OldNamecall = hookmetamethod(game, "__namecall", closureWrapper(function(self, ...)
+            local method = getnamecallmethod()
+
+            if getgenv().PanteliiiConfig.AimEnabled and CurrentTargetPart and CurrentTargetPredPos and (method == "Raycast" or method == "FindPartOnRayWithIgnoreList" or method == "FindPartOnRay") then
+                if CurrentTargetPart.Parent and IsAlive(CurrentTargetPart.Parent) then
+                    local args = {...}
+                    local targetPos = CurrentTargetPredPos
+
+                    if method == "Raycast" and #args >= 2 then
+                        args[2] = (targetPos - args[1]).Unit * 5000
+                        return OldNamecall(self, table_unpack(args))
+                    elseif (method == "FindPartOnRayWithIgnoreList" or method == "FindPartOnRay") and #args >= 1 then
+                        local origin = args[1].Origin
+                        args[1] = Ray.new(origin, (targetPos - origin).Unit * 5000)
+                        return OldNamecall(self, table_unpack(args))
+                    end
+                end
+            end
+
+            return OldNamecall(self, ...)
+        end))
+    end
+
+    local MainTab = Window:CreateTab(L.TabMain)
+    local AimTab = Window:CreateTab(L.TabAim)
+    local FlyTab = Window:CreateTab(L.TabFly)
+    local FarmTab = Window:CreateTab(L.TabFarm)
+    local VisualsTab = Window:CreateTab(L.TabVisuals)
+    local PlayerTab = Window:CreateTab(L.TabPlayer)
+    local VehicleTab = Window:CreateTab(L.TabVehicle)
+
+    MainTab:CreateParagraph({ Title = L.Creator, Content = "Panteliii Hub Ultimate Edition\nTelegram: @pantelii" })
+    MainTab:CreateButton({
+        Name = L.CopyKeyBtn,
+        Callback = function()
+            if setclipboard then
+                setclipboard(LootLabsLink)
+                pcall(function()
+                    RayfieldMain:Notify({ Title = "Success", Content = L.CopiedNotify, Duration = 3 })
+                end)
+            end
+        end
+    })
+    MainTab:CreateButton({ Name = L.UnloadBtn, Callback = UnloadScript })
+
+    MainTab:CreateKeybind({
+        Name = L.KeybindLabel,
+        CurrentKeybind = "Q",
+        HoldToInteract = false,
+        Flag = "MasterKey",
+        Callback = function(Keybind) getgenv().PanteliiiConfig.MasterKeycode = Enum.KeyCode[Keybind] end
+    })
+
+    local AimToggle = AimTab:CreateToggle({
+        Name = L.AimEnable, CurrentValue = false, Flag = "AimToggle",
+        Callback = function(v) getgenv().PanteliiiConfig.AimEnabled = v end
+    })
+
+    AimTab:CreateParagraph({ Title = "📌 Info", Content = L.AimDistNote })
+
+    AimTab:CreateDropdown({
+        Name = L.AimPart, Options = L.AimParts, CurrentOption = {L.Torso}, MultipleOptions = false, Flag = "AimPart",
+        Callback = function(v) getgenv().PanteliiiConfig.AimPartMode = type(v) == "table" and (v[1] or L.Torso) or v end
+    })
+
+    AimTab:CreateToggle({
+        Name = L.WallCheck, CurrentValue = true, Flag = "WallCheck",
+        Callback = function(v) getgenv().PanteliiiConfig.WallCheck = v end
+    })
+
+    AimTab:CreateToggle({
+        Name = L.AutoPred, CurrentValue = true, Flag = "AutoPred",
+        Callback = function(v) getgenv().PanteliiiConfig.AutoPrediction = v end
+    })
+
+    AimTab:CreateSlider({
+        Name = L.AimSmooth, Range = {0.05, 0.5}, Increment = 0.01, Suffix = "x", CurrentValue = 0.25, Flag = "AimSmooth",
+        Callback = function(v) getgenv().PanteliiiConfig.AimSmoothness = v end
+    })
+
+    local FovToggle = AimTab:CreateToggle({
+        Name = L.FovVisible, CurrentValue = false, Flag = "FovVisible",
+        Callback = function(v) getgenv().PanteliiiConfig.FovVisible = v end
+    })
+
+    AimTab:CreateSlider({
+        Name = L.FovRadius, Range = {30, 800}, Increment = 5, Suffix = "px", CurrentValue = 180, Flag = "FovRadius",
+        Callback = function(v) getgenv().PanteliiiConfig.FovRadius = v end
+    })
+
+    AimTab:CreateColorPicker({
+        Name = L.FovColor, Color = Color3.fromRGB(0, 200, 255), Flag = "FovColorPicker",
+        Callback = function(v)
+            getgenv().PanteliiiConfig.FovColor = v
+            FOVCircle.Color = v
+        end
+    })
+
+    local FlyToggle = FlyTab:CreateToggle({
+        Name = L.FlyEnable, CurrentValue = false, Flag = "FlyBypassEnabled",
+        Callback = function(v) ToggleBypassFly(v) end
+    })
+
+    FlyTab:CreateSlider({
+        Name = L.FlySpeed, Range = {50, 700}, Increment = 10, Suffix = "studs/s", CurrentValue = 256, Flag = "FlySpeed",
+        Callback = function(v) getgenv().PanteliiiConfig.FlySpeed = v end
+    })
+
+    FlyTab:CreateSlider({
+        Name = L.FlyWalkSpeed, Range = {16, 250}, Increment = 5, Suffix = "studs/s", CurrentValue = 50, Flag = "FlyWalkSpeed",
+        Callback = function(v) getgenv().PanteliiiConfig.FlyWalkSpeed = v end
+    })
+
+    FlyTab:CreateKeybind({
+        Name = L.FlyKeybind,
+        CurrentKeybind = "B",
+        HoldToInteract = false,
+        Flag = "FlyKey",
+        Callback = function(Keybind)
+            getgenv().PanteliiiConfig.FlyKey = Enum.KeyCode[Keybind]
+        end
+    })
+
+    FarmTab:CreateButton({
+        Name = L.TpDealer,
+        Callback = function()
+            TeleportTo(DealerPosition)
+            pcall(function()
+                RayfieldMain:Notify({ Title = "Телепорт", Content = "Успешно перемещен к Дилеру!", Duration = 2 })
+            end)
+        end
+    })
+
+    FarmTab:CreateButton({
+        Name = L.RouteBuy,
+        Callback = function() StartAutoRoute(PurchaseWaypoints, "ЗАКУП") end
+    })
+
+    FarmTab:CreateButton({
+        Name = L.RouteWash,
+        Callback = function() StartAutoRoute(WashWaypoints, "ОТМЫВ") end
+    })
+
+    FarmTab:CreateButton({
+        Name = L.StopMovement,
+        Callback = function() StopMovementAndRoutes() end
+    })
+
+    FarmTab:CreateToggle({
+        Name = L.ClickTp, CurrentValue = false, Flag = "ClickTpEnabled",
+        Callback = function(v) getgenv().PanteliiiConfig.ClickTpEnabled = v end
+    })
+
+    FarmTab:CreateKeybind({
+        Name = L.ClickTpKey,
+        CurrentKeybind = "Q",
+        HoldToInteract = false,
+        Flag = "ClickTpKeybind",
+        Callback = function(Keybind) getgenv().PanteliiiConfig.ClickTpKey = Enum.KeyCode[Keybind] end
+    })
+
+    VisualsTab:CreateToggle({
+        Name = L.EspEnable, CurrentValue = false, Flag = "EspEnabled",
+        Callback = function(v) getgenv().PanteliiiConfig.EspEnabled = v end
+    })
+
+    VisualsTab:CreateSlider({
+        Name = L.EspDist, Range = {50, 8000}, Increment = 50, Suffix = "m", CurrentValue = 1500, Flag = "EspMaxDistance",
+        Callback = function(v) getgenv().PanteliiiConfig.EspMaxDistance = v end
+    })
+
+    VisualsTab:CreateColorPicker({
+        Name = L.EspColor, Color = Color3.fromRGB(0, 200, 255), Flag = "EspColorPicker",
+        Callback = function(v) getgenv().PanteliiiConfig.BoxColor = v end
+    })
+
+    VisualsTab:CreateToggle({
+        Name = L.TeamCheck, CurrentValue = true, Flag = "TeamCheck",
+        Callback = function(v) getgenv().PanteliiiConfig.TeamCheck = v end
+    })
+
+    VisualsTab:CreateToggle({
+        Name = L.ShowFactions, CurrentValue = true, Flag = "ShowFactions",
+        Callback = function(v) getgenv().PanteliiiConfig.ShowFactions = v end
+    })
+
+    VisualsTab:CreateToggle({
+        Name = L.ShowStars, CurrentValue = true, Flag = "ShowStars",
+        Callback = function(v) getgenv().PanteliiiConfig.ShowStars = v end
+    })
+
+    VisualsTab:CreateSlider({
+        Name = L.EspUpdateRate, Range = {0.05, 0.5}, Increment = 0.01, Suffix = "s", CurrentValue = 0.1, Flag = "EspUpdateRate",
+        Callback = function(v) getgenv().PanteliiiConfig.EspUpdateRate = v end
+    })
+
+    PlayerTab:CreateToggle({
+        Name = L.SpeedEnable, CurrentValue = false, Flag = "SpeedEnabled",
+        Callback = function(v) getgenv().PanteliiiConfig.SpeedEnabled = v end
+    })
+
+    PlayerTab:CreateSlider({
+        Name = L.SpeedVal, Range = {16, 150}, Increment = 1, Suffix = "studs/s", CurrentValue = 16, Flag = "SpeedValue",
+        Callback = function(v) getgenv().PanteliiiConfig.SpeedValue = v end
+    })
+
+    PlayerTab:CreateToggle({
+        Name = L.Noclip, CurrentValue = false, Flag = "NoclipEnabled",
+        Callback = function(v) getgenv().PanteliiiConfig.NoclipEnabled = v end
+    })
+
+    PlayerTab:CreateToggle({
+        Name = L.AntiAfk, CurrentValue = false, Flag = "AntiAfkEnabled",
+        Callback = function(v) getgenv().PanteliiiConfig.AntiAfkEnabled = v end
+    })
+
+    VehicleTab:CreateToggle({
+        Name = L.VehEnable, CurrentValue = false, Flag = "VehicleSpeedEnabled",
+        Callback = function(v) getgenv().PanteliiiConfig.VehicleSpeedEnabled = v end
+    })
+
+    VehicleTab:CreateSlider({
+        Name = L.VehMult, Range = {20, 700}, Increment = 10, Suffix = "studs/s", CurrentValue = 200, Flag = "VehicleSpeedMult",
+        Callback = function(v) getgenv().PanteliiiConfig.VehicleSpeedMult = v end
+    })
+
+    -- ==== ALT TIMER TAB ====
+    local TimerTab = Window:CreateTab(L.AltTimerTitle)
+
+    TimerTab:CreateToggle({
+        Name = L.AltTimerEnabled, CurrentValue = true, Flag = "AltTimerEnabled",
+        Callback = function(v)
+            getgenv().PanteliiiConfig.AltTimerEnabled = v
+            if not v then
+                altVisible = false
+                altRunning = false
+                AltTimerLabel.Visible = false
+            end
+        end
+    })
+
+    TimerTab:CreateSlider({
+        Name = L.AltTimerDuration, Range = {1, 60}, Increment = 1, Suffix = "min", CurrentValue = 6, Flag = "AltTimerDuration",
+        Callback = function(v)
+            getgenv().PanteliiiConfig.AltTimerDuration = v * 60
+            altRemaining = v * 60
+            if altVisible then AltUpdateLabel() end
+        end
+    })
+
+    TimerTab:CreateSlider({
+        Name = L.AltTimerSize, Range = {16, 80}, Increment = 1, Suffix = "px", CurrentValue = 40, Flag = "AltTimerSize",
+        Callback = function(v) getgenv().PanteliiiConfig.AltTimerSize = v AltApplyStyle() end
+    })
+
+    TimerTab:CreateSlider({
+        Name = L.AltTimerPosX, Range = {0, 1920}, Increment = 1, Suffix = "px", CurrentValue = 378, Flag = "AltTimerPosX",
+        Callback = function(v) getgenv().PanteliiiConfig.AltTimerPosX = v AltApplyStyle() end
+    })
+
+    TimerTab:CreateSlider({
+        Name = L.AltTimerPosY, Range = {0, 1080}, Increment = 1, Suffix = "px", CurrentValue = 10, Flag = "AltTimerPosY",
+        Callback = function(v) getgenv().PanteliiiConfig.AltTimerPosY = v AltApplyStyle() end
+    })
+
+    TimerTab:CreateColorPicker({
+        Name = L.AltTimerColor, Color = Color3.fromRGB(255, 255, 255), Flag = "AltTimerColor",
+        Callback = function(v)
+            getgenv().PanteliiiConfig.AltTimerColor = v
+            AltApplyStyle()
+        end
+    })
+
+    TimerTab:CreateToggle({
+        Name = L.AltTimerShowOnStart, CurrentValue = false, Flag = "AltTimerShowOnStart",
+        Callback = function(v)
+            getgenv().PanteliiiConfig.AltTimerShowOnStart = v
+            if v and not altVisible then
+                altRemaining = getgenv().PanteliiiConfig.AltTimerDuration
+                altVisible = true
+                altRunning = true
+                altAccum = 0
+                AltTimerLabel.Visible = true
+                AltUpdateLabel()
+            elseif not v then
+                altVisible = false
+                altRunning = false
+                AltTimerLabel.Visible = false
+            end
+        end
+    })
+
+    TimerTab:CreateKeybind({
+        Name = L.AltTimerResetKey,
+        CurrentKeybind = "RightAlt",
+        HoldToInteract = false,
+        Flag = "AltTimerResetKey",
+        Callback = function(Keybind)
+            local ok, key = pcall(function() return Enum.KeyCode[Keybind] end)
+            if ok and key then getgenv().PanteliiiConfig.AltTimerResetKey = key end
+        end
+    })
+
+    table.insert(Connections, UserInputService.InputBegan:Connect(function(input, gpe)
+        if gpe or UserInputService:GetFocusedTextBox() then return end
+
+        if input.KeyCode == getgenv().PanteliiiConfig.MasterKeycode and input.KeyCode ~= Enum.KeyCode.Unknown then
+            local newState = not getgenv().PanteliiiConfig.AimEnabled
+            getgenv().PanteliiiConfig.AimEnabled = newState
+            getgenv().PanteliiiConfig.FovVisible = newState
+
+            if AimToggle and AimToggle.Set then AimToggle:Set(newState) end
+            if FovToggle and FovToggle.Set then FovToggle:Set(newState) end
+        end
+
+        if input.KeyCode == getgenv().PanteliiiConfig.FlyKey and input.KeyCode ~= Enum.KeyCode.Unknown then
+            local newState = not getgenv().PanteliiiConfig.FlyBypassEnabled
+            ToggleBypassFly(newState)
+            if FlyToggle and FlyToggle.Set then FlyToggle:Set(newState) end
+        end
+
+        if input.KeyCode == getgenv().PanteliiiConfig.ClickTpKey and input.KeyCode ~= Enum.KeyCode.Unknown and getgenv().PanteliiiConfig.ClickTpEnabled then
+            if Mouse.Target then
+                TeleportTo(Mouse.Hit.Position)
+            end
+        end
+    end))
+
+    -- ================== ОПТИМИЗИРОВАННЫЙ ЦИКЛ ==================
+    -- Быстрая часть (каждый кадр): FOV + Аим
+    -- Медленная часть (EspUpdateRate): ESP, Noclip, Speed, Car Speed
+    local slowAccum = 0
+
+    RenderConnection = RunService.RenderStepped:Connect(function(dt)
+        local cfg = getgenv().PanteliiiConfig
+        local localChar = LocalPlayer.Character
+        local localHrp = localChar and localChar:FindFirstChild("HumanoidRootPart")
+        local viewportSize = Camera.ViewportSize
+        local viewportCenter = Vector2_new(viewportSize.X * 0.5, viewportSize.Y * 0.5)
+
+        -- === БЫСТРАЯ ЧАСТЬ: FOV + AIM ===
+        if cfg.FovVisible then
+            FOVCircle.Position = viewportCenter
+            FOVCircle.Radius = cfg.FovRadius
+            FOVCircle.Visible = true
+        else
+            FOVCircle.Visible = false
+        end
+
+        local bestTargetPart = nil
+        local bestTargetPredPos = nil
+        local bestScreenPoint = nil
+        local shortestFovDistance = math_huge
+
+        for player, data in pairs(ESP_Cache) do
+            if IsAlive(data.Char, data.Hum) then
+                local isEnemy = CheckIsEnemy(player)
+                local rootPart = data.Root
+
+                if (cfg.AimEnabled or cfg.FovVisible) and isEnemy and localHrp and rootPart then
+                    local dist3D = (localHrp.Position - rootPart.Position).Magnitude
+                    if dist3D <= cfg.EspMaxDistance then
+                        local targetPart = GetSelectedPart(data)
+                        if targetPart then
+                            local predPos = CalculatePredictedPosition(targetPart)
+                            local worldPoint, onScreen = Camera:WorldToViewportPoint(predPos)
+
+                            if onScreen then
+                                local screenPos = Vector2_new(worldPoint.X, worldPoint.Y)
+                                local distToCenter = (screenPos - viewportCenter).Magnitude
+
+                                if distToCenter <= cfg.FovRadius and distToCenter < shortestFovDistance then
+                                    shortestFovDistance = distToCenter
+                                    bestTargetPart = targetPart
+                                    bestTargetPredPos = predPos
+                                    bestScreenPoint = screenPos
+                                end
+                            end
+                        end
+                    end
+                end
+            end
+        end
+
+        CurrentTargetPart = bestTargetPart
+        CurrentTargetPredPos = bestTargetPredPos
+
+        if cfg.AimEnabled and bestScreenPoint and mousemoverel then
+            local mouseDelta = bestScreenPoint - viewportCenter
+            if (mouseDelta.X * mouseDelta.X + mouseDelta.Y * mouseDelta.Y) > 2.25 then
+                mousemoverel(mouseDelta.X * cfg.AimSmoothness, mouseDelta.Y * cfg.AimSmoothness)
+            end
+        end
+
+        -- === МЕДЛЕННАЯ ЧАСТЬ ===
+        slowAccum = slowAccum + dt
+        if slowAccum < cfg.EspUpdateRate then return end
+        slowAccum = 0
+
+        if cfg.NoclipEnabled and localChar then
+            for _, part in ipairs(localChar:GetChildren()) do
+                if part:IsA("BasePart") then part.CanCollide = false end
+            end
+        end
+
+        if cfg.SpeedEnabled and localChar and localHrp then
+            local humanoid = localChar:FindFirstChildOfClass("Humanoid")
+            if humanoid and humanoid.MoveDirection.Magnitude > 0 then
+                local moveDir = humanoid.MoveDirection
+                localHrp.AssemblyLinearVelocity = Vector3_new(moveDir.X * cfg.SpeedValue, localHrp.AssemblyLinearVelocity.Y, moveDir.Z * cfg.SpeedValue)
+            end
+        end
+
+        if cfg.VehicleSpeedEnabled and localChar then
+            local humanoid = localChar:FindFirstChildOfClass("Humanoid")
+            if humanoid and humanoid.SeatPart then
+                local seat = humanoid.SeatPart
+                local model = seat:FindFirstAncestorOfClass("Model")
+                local targetPart = model and model.PrimaryPart or seat
+                if seat:IsA("VehicleSeat") then seat.MaxSpeed = 9999 seat.Torque = 9999 end
+
+                local isMovingForward = UserInputService:IsKeyDown(Enum.KeyCode.W) or (seat:IsA("VehicleSeat") and seat.Throttle > 0)
+                if isMovingForward and targetPart then
+                    local forwardVector = targetPart.CFrame.LookVector
+                    targetPart.AssemblyLinearVelocity = Vector3_new(forwardVector.X * cfg.VehicleSpeedMult, targetPart.AssemblyLinearVelocity.Y, forwardVector.Z * cfg.VehicleSpeedMult)
+                end
+            end
+        end
+
+        for player, data in pairs(ESP_Cache) do
+            if IsAlive(data.Char, data.Hum) then
+                local isEnemy = CheckIsEnemy(player)
+                local rootPart = data.Root
+                local dist3D = (localHrp and rootPart) and (localHrp.Position - rootPart.Position).Magnitude or math_huge
+
+                -- Обновляем звёзды раз в 0.5 сек
+                if tick() - (data.LastStarsTick or 0) > 0.5 then
+                    data.LastStars = GetStars(player)
+                    data.LastStarsTick = tick()
+                end
+
+                if cfg.EspEnabled and isEnemy and rootPart and dist3D <= cfg.EspMaxDistance then
+                    if not data.Highlight.Enabled then data.Highlight.Enabled = true end
+
+                    if data.LastColor ~= cfg.BoxColor then
+                        data.Highlight.FillColor = cfg.BoxColor
+                        data.Highlight.OutlineColor = cfg.BoxColor
+                        data.Label.TextColor3 = cfg.BoxColor
+                        data.LastColor = cfg.BoxColor
+                    end
+
+                    local _, onScreen = Camera:WorldToViewportPoint(rootPart.Position)
+                    if onScreen then
+                        if not data.Gui.Enabled then data.Gui.Enabled = true end
+
+                        local factionText = cfg.ShowFactions and ("\n[" .. GetPlayerFaction(player) .. "]") or ""
+                        local starsText = ""
+                        if cfg.ShowStars and data.LastStars and data.LastStars > 0 then
+                            starsText = "\n" .. string.rep("★", data.LastStars)
+                        end
+                        local fullText = (player.DisplayName or player.Name) .. factionText .. starsText
+
+                        if data.LastText ~= fullText then
+                            data.Label.Text = fullText
+                            data.LastText = fullText
+                        end
+                    else
+                        if data.Gui.Enabled then data.Gui.Enabled = false end
+                    end
+                else
+                    if data.Highlight.Enabled then data.Highlight.Enabled = false end
+                    if data.Gui.Enabled then data.Gui.Enabled = false end
+                end
+            else
+                if data.Highlight.Enabled then data.Highlight.Enabled = false end
+                if data.Gui.Enabled then data.Gui.Enabled = false end
+            end
+        end
+    end)
+end
+
+VerifyBtn.MouseButton1Click:Connect(function()
+    VerifyBtn.Text = L.KeyVerifyingText
+
+    local success, actualKey = pcall(function()
+        return game:HttpGet(PastebinKeyURL):gsub("%s+", "")
+    end)
+
+    local enteredKey = KeyInput.Text:gsub("%s+", "")
+
+    if success and enteredKey == actualKey and enteredKey ~= "" then
+        VerifyBtn.Text = L.KeySuccessText
+        VerifyBtn.BackgroundColor3 = Color3.fromRGB(46, 204, 113)
+        task.wait(1)
+        StartMainScript()
+    else
+        VerifyBtn.Text = L.KeyErrorText
+        VerifyBtn.BackgroundColor3 = Color3.fromRGB(231, 76, 60)
+        task.wait(1.5)
+        VerifyBtn.Text = L.KeyVerifyBtn
+        VerifyBtn.BackgroundColor3 = Color3.fromRGB(0, 140, 255)
+    end
+end)
